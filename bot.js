@@ -753,7 +753,7 @@ message.channel.send({embed});
 client.on('message', message => {
   if (true) {
 if (message.content === '$invite') {
-      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=8&scope=bot  |  اتفضل رابط البوت     ').catch(e => console.log(e.stack));
+      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=494532642939600906&permissions=8&scope=bot  |  اتفضل رابط البوت     ').catch(e => console.log(e.stack));
  
     }
    }
