@@ -947,20 +947,14 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) retur
   
  
 
-if (command == "embed") {
-if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
-         
-         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**
-         `);
-
-    let say = new Discord.RichEmbed()
-    .setDescription(args.join("  "))
-    .setColor(0x23b2d6)
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
-
-
+if (command == "emb")    { //Jackeo  حقوقي
+  if(!message.channel.guild) return message.reply('** __This command only for servers⛔__  **'); //Jackeo  حقوقي
+    let say = new Discord.RichEmbed() //Jackeo  حقوقي
+    .setDescription(args.join("  ")) //Jackeo  حقوقي
+    .setColor("RANDOM") //Jackeo  حقوقي
+    message.channel.sendEmbed(say); //Jackeo  حقوقي
+    message.delete(); //Jackeo  حقوقي
+  } //Jackeo  حقوقي 
 });
 
 
