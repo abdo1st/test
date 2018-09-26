@@ -10,7 +10,7 @@ const YouTube = require('simple-youtube-api');
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const UserBlocked = new Set(); 
-const prefix = '$';
+const prefix = '*';
 
 
 
@@ -31,7 +31,7 @@ client.on('message', message => {
  .addField("**Server: **" , client.guilds.size)
  message.channel.sendEmbed(embed);
    }
-if (message.content === 'fhelp') {    
+if (message.content === '*help-m') {    
          const embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
 .addField('**$play <name>** ' , '**لتشغيل المسيقى **')
@@ -56,7 +56,7 @@ if (message.content === 'fhelp') {
 
   client.on('message', message => {
    if (message.author.bot) return;
-    if (message.content === "+help-m") {
+    if (message.content === "*help-m") {
               if(!message.channel.guild) return message.reply(':x:  **The orders are not in your الاوامر مو فى **');
  const embed = new Discord.RichEmbed()
          .setColor("#efa800")
@@ -444,7 +444,7 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-var prefix = "$";
+var prefix = "*";
 
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -580,7 +580,7 @@ client.on('guildCreate', guild => {
 
 client.on('message', message =>{
     let args = message.content.split(' ');
-    let prefix = '$'; //تقدر تغير البرفكس
+    let prefix = '*'; //تقدر تغير البرفكس
     
     if(args[0] === `${prefix}avatar`){
         let mentions = message.mentions.members.first()
@@ -687,7 +687,7 @@ client.on("message", (message) => {
 
 
  client.on('message', message => {
-    var prefix = "$"
+    var prefix = "*"
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
@@ -752,7 +752,7 @@ message.channel.send({embed});
 
 client.on('message', message => {
   if (true) {
-if (message.content === '$invite') {
+if (message.content === '*invite') {
       message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=494532642939600906&permissions=8&scope=bot  |  اتفضل رابط البوت     ').catch(e => console.log(e.stack));
  
     }
@@ -1002,7 +1002,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) retur
 client.on('message', msg => {
     if(msg.author.bot) return;
     
-    if(msg.content === '$سيرفرات البوت') {
+    if(msg.content === '*سيرفرات البوت') {
       client.guilds.forEach(g => {
         
         let l = g.id
@@ -1195,42 +1195,42 @@ client.on('message', message => {
 ┃┃┃╰┫╰━╯┃╰━╯┣╯╭╮╰╮
 ╰╯╰━┻━━━┻━━━┻━╯╰━╯
 ╔[❖════════════❖]╗
-             Prefix = ' $ '
+             Prefix = ' * '
 ╚[❖════════════❖]╝
 ╔[❖════════════❖]╗
             الأوامر العامة
 ╚[❖════════════❖]╝
 
 
-❖ $members   ➾ معلومات عن اعضاء السيرفر
+❖ *members   ➾ معلومات عن اعضاء السيرفر
 
 
-❖ $id  ➾ من اجل معلومات حسابك 
+❖ *id  ➾ من اجل معلومات حسابك 
 
 
-❖ $invie  ➾  لدعوة البوت إلى سيرفر اخر
+❖ *invie  ➾  لدعوة البوت إلى سيرفر اخر
 
 
-❖ $avatar  ➾ لعرض الصورة الشخصية 
+❖ *avatar  ➾ لعرض الصورة الشخصية 
 
 
-❖ $help-m ➾ من اجل اوامر الموسيقة
+❖ *help-m ➾ من اجل اوامر الموسيقة
 
 ╔[❖════════════❖]╗
             الأوامر الأدارية
 ╚[❖════════════❖]╝
 
 
-❖ $bc   ➾ لإرسال رسالة جماعية
+❖ *bc   ➾ لإرسال رسالة جماعية
 
 
-❖ $say   ➾ لإرسال رسالة في الغرف الكتابية
+❖ *say   ➾ لإرسال رسالة في الغرف الكتابية
 
 
-❖ $giveaway   ➾ من اجل توزيع شيء ما
+❖ *giveaway   ➾ من اجل توزيع شيء ما
 
 
-❖ $clear   ➾  لمسح الغرف الكتابية
+❖ *clear   ➾  لمسح الغرف الكتابية
 ==================================================================
 `);
 
