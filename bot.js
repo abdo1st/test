@@ -34,17 +34,17 @@ client.on('message', message => {
 if (message.content === '*help-m') {    
          const embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)    
-.addField('**$play <name>** ' , '**لتشغيل المسيقى **')
+.addField('***play <name>** ' , '**لتشغيل المسيقى **')
 
-.addField('**$stop** ' , '**لتوقف المسيقى **')
+.addField('***stop** ' , '**لتوقف المسيقى **')
 
-.addField('**$skip** ' , '**لتخطي الاغنية **')
+.addField('***skip** ' , '**لتخطي الاغنية **')
 
-.addField('**$vol <number>** ' , '**لتغيير الصوت **')
+.addField('***vol <number>** ' , '**لتغيير الصوت **')
 
-.addField('**$puase** ' , '**ايقاف بشكل موقت **')
+.addField('***puase** ' , '**ايقاف بشكل موقت **')
 
-.addField('**$resume** ' , '**استاناف الموسيقى **')
+.addField('***resume** ' , '**استاناف الموسيقى **')
         .setColor('RANDOM')    
  message.author.sendEmbed(embed);
  message.react("👌")
@@ -65,17 +65,17 @@ if (message.content === '*help-m') {
                 .setTimestamp()
    .setDescription(`
                                                     
-**$play <name> / To Play The Song
+***play <name> / To Play The Song
 
-$stop / To Stop The Song
+*stop / To Stop The Song
 
-$skip / To Skip The Song
+*skip / To Skip The Song
 
-$vol <number> / To Change Volume
+*vol <number> / To Change Volume
 
-$pause / To Pause The Song
+*pause / To Pause The Song
 
-$resume / To Resume The Song
+*resume / To Resume The Song
 **
 `);
 
