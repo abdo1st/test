@@ -793,7 +793,7 @@ client.on('message', message => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help`,"http://twitch.tv/S-F")
+client.user.setGame(`*help`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -1208,7 +1208,7 @@ client.on('message', message => {
 ❖ *id  ➾ من اجل معلومات حسابك 
 
 
-❖ *invie  ➾  لدعوة البوت إلى سيرفر اخر
+❖ *invite  ➾  لدعوة البوت إلى سيرفر اخر
 
 
 ❖ *avatar  ➾ لعرض الصورة الشخصية 
