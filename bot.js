@@ -151,69 +151,6 @@ client.on('message', async msg => {
     const serverQueue = queue.get(msg.guild.id);
     let command = msg.content.toLowerCase().split(" ")[0];
     command = command.slice(prefix.length)
-    if (command === `p`) {
-        const voiceChannel = msg.member.voiceChannel;
-        if (!voiceChannel) return msg.channel.send('يجب تواجدك بروم صوتي | :x:');
-        const permissions = voiceChannel.permissionsFor(msg.client.user);
-        if (!permissions.has('CONNECT')) {
-            return msg.channel.send('يجب اعطاء البوت صلاحيه لدخول الروم | :x:');
-        }
-        if (!permissions.has('SPEAK')) {
-            return msg.channel.send('يجب اعطاء البوت صلاحيه للتكلم بلروم | :x:');
-        }
- 
-        if (!permissions.has('EMBED_LINKS')) {
-            return msg.channel.sendMessage("**يجب اعطاء البوت صلاحيه ``EMBED_LINKS`` | :x:**")
-            }
- 
-        if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
-            const playlist = await youtube.getPlaylist(url);
-            const videos = await playlist.getVideos();
-            for (const video of Object.values(videos)) {
-                const video2 = await youtube.getVideoByID(video.id);
-                await handleVideo(video2, msg, voiceChannel, true);
-            }
-            return msg.channel.send(` **${playlist.title}** تمت اضافته علي قائمه التشغيل | :white_check_mark:`);
-        } else {
-            try {
- 
-                var video = await youtube.getVideo(url);
- 
-            } catch (error) {
-                try {
-                                            var fast = {};
-                    var videos = await youtube.searchVideos(searchString, 10);
-                    let index = 0;
-                    const embed1 = new Discord.RichEmbed()
-                    .setDescription(`**اكتب رقم المقطع** :
-${videos.map(video2 => `[**${++index}**] **${video2.title}**`).join('\n')}`)
-                    .setFooter(`${msg.guild.name}`)
-                    msg.channel.sendEmbed(embed1).then(message =>{
- 
-                        message.delete(15000)
- 
-                    });
-                    try {
-                        var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
-                            maxMatches: 1,
-                            time: 20000,
-                            errors: ['time']
-                        })
- 
-                        }catch(err) {
-                        console.error(err);
-                        return msg.channel.send('لم يتم اختيار رقم | :x:');
-                        }
-                    const videoIndex = parseInt(response.first().content);
-                    var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
-                } catch (err) {
-                    console.error(err);
-                    return msg.channel.send('لا يتوفر نتائج بحث | :x:');
-                }
-        }
- 
-            return handleVideo(video, msg, voiceChannel);
-        }
 	if (command === `play`) {
         const voiceChannel = msg.member.voiceChannel;
         if (!voiceChannel) return msg.channel.send('يجب تواجدك بروم صوتي | :x:');
