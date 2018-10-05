@@ -12,7 +12,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const UserBlocked = new Set(); 
 const prefix = '*';
-
+onst adminprefix = "*";
 
 
 
@@ -1248,7 +1248,7 @@ client.on ("guildMemberRemove", member => {
 })
 
 
-onst adminprefix = "*";
+
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
